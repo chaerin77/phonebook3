@@ -120,12 +120,15 @@ public class PhoneController {
 		return "/WEB-INF/views/updateForm.jsp";
 	}
 	
+	
 	//수정
 	@RequestMapping(value="/update", method= {RequestMethod.GET, RequestMethod.POST})
 	public String update(@ModelAttribute PersonVo personVo) {
 		
+		
 		PhoneDao phoneDao = new PhoneDao();
-		phoneDao.personUpdate(personVo);
+		int i = phoneDao.personUpdate(personVo);
+		System.out.println(i);
 		
 		return "redirect:/phone/list";
 	}
