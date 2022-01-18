@@ -110,13 +110,12 @@ public class PhoneController {
 
 	//수정폼
 	@RequestMapping(value="/updateForm", method= {RequestMethod.GET, RequestMethod.POST})
-	public String updateForm(@RequestParam("no") int no) {
+	public String updateForm(Model model, @RequestParam("no") int no) { //콤마!
 		
-		PhoneDao phoneDao= new PhoneDao();
-		PersonVo pvo = phoneDao.getPerson(no);
-		System.out.println(pvo);
+		PhoneDao pDao = new PhoneDao();
+		PersonVo pvo = pDao.getPerson(no);
 		
-		
+		model.addAttribute("pVo", pvo);
 		
 		return "/WEB-INF/views/updateForm.jsp";
 	}

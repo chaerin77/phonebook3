@@ -16,12 +16,12 @@
 	   아래의 값을 수정하고 "수정" 버튼을 클릭하세요</p>
 	
 	<form action="/phonebook3/phone/update" method="get">
-		이름(name):<input type="text" name="name" value="${getP.name}"><br>
-		핸드폰(hp):<input type="text" name="hp" value="${getP.hp}"><br>
-		회사(company):<input type="text" name="company" value="${requestScope.getP.company}"><br>
-		코드(id):<input type="text" name="pId" value="${requestScope.getP.personId}"><br>
+		이름(name):<input type="text" name="name" value="${pVo.name}"><br>
+		핸드폰(hp):<input type="text" name="hp" value="${pVo.hp}"><br>
+		회사(company):<input type="text" name="company" value="${pVo.company}"><br>
+		코드(id):<input type="text" name="pId" value="${pVo.personId}"><br>
 		<!-- action:<input type="text" name="action" value="update"><br>--> <!-- 컨트롤러의 action=update -->
-		<button type="submit">수정</button>
+		<button id="testId" type="submit">수정</button>
 	</form>   
 </body>
 </html>
